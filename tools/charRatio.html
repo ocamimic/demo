@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCompresser</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav id="header">
+        <ul>
+           <li>
+                <a href="../tools/top">ツールとか色々</a>
+            </li>
+            <li>
+                <a href="../works/top">作ったもの</a>
+            </li>
+            <li>
+                <a href="../others/top">その他</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="contents">
+        <h1>ここは何？</h1>
+        <div class="description">
+        漢字、ひらがな、カタカナ、英数字の比率を計算するやつ。
+        </div>
+        <textarea id="input" placeholder="ここに入力">
+        </textarea>
+        <table id="output">
+            <tr><td>文字種</td><td>割合</td></tr>
+            <tr><td>漢字</td><td></td></tr>
+            <tr><td>ひらがな</td><td></td></tr>
+            <tr><td>カタカナ</td><td></td></tr>
+            <tr><td>英数字</td><td></td></tr>
+            <tr><td>空行</td><td></td></tr>
+        </table>
+    </div>
+    <script>
+        var outputs = document.querySelectorAll('#output tr d::nth-child(2)');
+        const data = {
+            length: 0,
+            kanji: [],
+            hiragana: [],
+            katakana: [],
+            alphabet: [],
+            others: [],
+            emptyline: []
+        }
+        function calcRatio() {
+            var input = document.getElementById('input').value;
+            const length = input.length;
+            // 改行、英数字、句読点類、ひらがな、カタカナ、漢字
+            const reg = [/\n/,/\n{2,}/,/\w/, /\u{3000}-\u{301C}/, /[\u{3041}-\u{3093}\u{309B}-\u{309E}]/, /[\u{30A1}-\u{30F6}\u{30FB}-\u{30FE}]/,/([\u{3005}\u{3007}\u{303b}\u{3400}-\u{9FFF}\u{F900}-\u{FAFF}\u{20000}-\u{2FFFF}][\u{E0100}-\u{E01EF}\u{FE00}-\u{FE02}])/];
+            
+        }
+    </script>
+</body>
+</html>
