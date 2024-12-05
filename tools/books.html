@@ -10,7 +10,7 @@
         --title-color: gold;
         --subtitle-color: white;
         --text: #000;
-
+        --paper: #f0f0f0;
     }
 body {
 font-size: 12px;
@@ -57,7 +57,7 @@ position: relative;
 transform-style: preserve-3d;
 backface-visibility: hidden;
 border-radius: 4px;
-/*box-shadow: 0 0 0 1px #e3dfd8;*/
+box-shadow: 0 0 0 1px #e3dfd8;
 }
 .book .page {
 background: left top no-repeat;
@@ -77,7 +77,6 @@ transform-style: preserve-3d;
 cursor: pointer;
 user-select: none;
 writing-mode: vertical-rl;
-background-color: #f0f0f0;
 }
 .book .page:before {
 content: '';
@@ -95,7 +94,7 @@ pointer-events: all;
 transform: rotateY(0deg);
 left: 0;
 border-radius: 0 4px 4px 0;
-background-image: linear-gradient(to right, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 10%);
+background: linear-gradient(to right, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 10%), var(--paper);
 }
 .book .page:nth-child(odd):hover {
 transform: rotateY(15deg);
@@ -113,7 +112,7 @@ transform-origin: 0 0;
 right: 0;
 border-radius: 4px 0 0 4px;
 border-color: black;
-background-image: linear-gradient(to left, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 10%);
+background: linear-gradient(to left, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 10%), var(--paper);
 }
 .book .page:nth-child(even):before, .book .page.flipped:nth-child(odd):before {
 background: rgba(0, 0, 0, 0.2);
