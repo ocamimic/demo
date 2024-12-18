@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    :root{
+        --cover: #000;
+        --title-color: gold;
+        --subtitle-color: white;
+        --text: #000;
+        --paper: #f0f0f0;
+    }
+body {
+font-size: 12px;
+}
+p{
+text-align: center;
+color: var(--text);
+}
+.cover {
+background: var(--cover) !important;
+writing-mode: horizontal-tb !important;
+}
+.cover .title {
+font-size: 2.5em;
+color: gold;
+text-align: center;
+}
+.cover .subtitle {
+font-size: 1em;
+color: #ffffff;
+text-align: center;
+}
+.page:nth-child(even) {
+clear: both;
+}
+.book {
+perspective: 250vw;
+font-size: 14px;
+transition: opacity 0.4s 0.2s;
+min-height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+line-height: 1.5em;
+overflow-y: visible;
+overflow-x: auto;
+width: 54em;
+height: 56em;
+}
+.book .pages {
+width: 54em;
+height: 42em;
+position: relative;
+transform-style: preserve-3d;
+backface-visibility: hidden;
+border-radius: 4px;
+box-shadow: 0 0 0 1px #e3dfd8;
+}
+.book .page {
+background: left top no-repeat;
+background-size: cover;
+float: none;
+clear: none;
+margin: 0;
+position: absolute;
+top: 0;
+width: 27em;
+height: 42em;
+padding: 3em 2em;
+transform-origin: 100% 0;
+transition: transform 1.4s;
+backface-visibility: hidden;
+transform-style: preserve-3d;
+cursor: pointer;
+user-select: none;
+writing-mode: vertical-rl;
+}
+.book .page:before {
+content: '';
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(0, 0, 0, 0);
+transition: background 0.7s;
+z-index: 2;
+}
+.book .page:nth-child(odd) {
+pointer-events: all;
+transform: rotateY(0deg);
+left: 0;
+border-radius: 0 4px 4px 0;
+background: linear-gradient(to right, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 10%), var(--paper);
+}
+.book .page:nth-child(odd):hover {
+transform: rotateY(15deg);
+}
+.book .page:nth-child(odd):hover:before {
+background: rgba(0, 0, 0, 0.03);
+}
+.book .page:nth-child(odd):before {
+background: rgba(0, 0, 0, 0);
+}
+.book .page:nth-child(even) {
+pointer-events: none;
+transform: rotateY(-180deg);
+transform-origin: 0 0;
+right: 0;
+border-radius: 4px 0 0 4px;
+border-color: black;
+background: linear-gradient(to left, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 10%), var(--paper);
+}
+.book .page:nth-child(even):before, .book .page.flipped:nth-child(odd):before {
+background: rgba(0, 0, 0, 0.2);
+}
+.book .page.grabbing {
+transition: none;
+}
+.book .page.flipped:nth-child(odd) {
+pointer-events: none;
+transform: rotateY(180deg);
+}
+.book .page.flipped:nth-child(even) {
+pointer-events: all;
+transform: rotateY(0deg);
+}
+.book .page.flipped:nth-child(even):hover {
+transform: rotateY(-15deg);
+}
+.book .page.flipped:nth-child(even):hover:before {
+background: rgba(0, 0, 0, 0.03);
+}
+.book .page.flipped:nth-child(even):before {
+background: rgba(0, 0, 0, 0);
+}
+*,
+* :before,
+*:after {
+box-sizing: border-box;
+}
+.bookwrapper {
+width: 100%;
+height: auto;
+overflow-x: auto!important;
+}
+</style>
+</head>
+<body>
+
+</body>
+</html>
